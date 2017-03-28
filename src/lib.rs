@@ -1,5 +1,6 @@
-# ! [ doc = "Peripheral access API for STM32F100XX microcontrollers (generated using svd2rust v0.4.0)" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]extern crate cortex_m ;
+# ! [ doc = "Peripheral access API for STM32F100XX microcontrollers (generated using svd2rust v0.5.0)" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]extern crate cortex_m ;
 extern crate vcell ;
+use core::ops::Deref;
 use cortex_m::peripheral::Peripheral;
 # [ doc = r" Interrupts" ]
 pub mod interrupt {
@@ -5798,7 +5799,16 @@ pub mod fsmc {
         }
     }
 }
-pub use fsmc::RegisterBlock as Fsmc;
+# [ doc = "Flexible static memory controller" ]
+pub struct Fsmc {
+    register_block: fsmc::RegisterBlock,
+}
+impl Deref for Fsmc {
+    type Target = fsmc::RegisterBlock;
+    fn deref(&self) -> &fsmc::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Power control" ]
 pub const PWR: Peripheral<Pwr> = unsafe { Peripheral::new(1073770496) };
 # [ doc = "Power control" ]
@@ -6331,7 +6341,16 @@ pub mod pwr {
         }
     }
 }
-pub use pwr::RegisterBlock as Pwr;
+# [ doc = "Power control" ]
+pub struct Pwr {
+    register_block: pwr::RegisterBlock,
+}
+impl Deref for Pwr {
+    type Target = pwr::RegisterBlock;
+    fn deref(&self) -> &pwr::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Reset and clock control" ]
 pub const RCC: Peripheral<Rcc> = unsafe { Peripheral::new(1073876992) };
 # [ doc = "Reset and clock control" ]
@@ -12135,7 +12154,16 @@ pub mod rcc {
         }
     }
 }
-pub use rcc::RegisterBlock as Rcc;
+# [ doc = "Reset and clock control" ]
+pub struct Rcc {
+    register_block: rcc::RegisterBlock,
+}
+impl Deref for Rcc {
+    type Target = rcc::RegisterBlock;
+    fn deref(&self) -> &rcc::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "General purpose I/O" ]
 pub const GPIOA: Peripheral<Gpioa> = unsafe { Peripheral::new(1073809408) };
 # [ doc = "General purpose I/O" ]
@@ -16473,31 +16501,88 @@ pub mod gpioa {
         }
     }
 }
-pub use gpioa::RegisterBlock as Gpioa;
+# [ doc = "General purpose I/O" ]
+pub struct Gpioa {
+    register_block: gpioa::RegisterBlock,
+}
+impl Deref for Gpioa {
+    type Target = gpioa::RegisterBlock;
+    fn deref(&self) -> &gpioa::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "GPIOB" ]
 pub const GPIOB: Peripheral<Gpiob> = unsafe { Peripheral::new(1073810432) };
 # [ doc = r" Register block" ]
-pub type Gpiob = Gpioa;
+pub struct Gpiob {
+    register_block: gpioa::RegisterBlock,
+}
+impl Deref for Gpiob {
+    type Target = gpioa::RegisterBlock;
+    fn deref(&self) -> &gpioa::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "GPIOC" ]
 pub const GPIOC: Peripheral<Gpioc> = unsafe { Peripheral::new(1073811456) };
 # [ doc = r" Register block" ]
-pub type Gpioc = Gpioa;
+pub struct Gpioc {
+    register_block: gpioa::RegisterBlock,
+}
+impl Deref for Gpioc {
+    type Target = gpioa::RegisterBlock;
+    fn deref(&self) -> &gpioa::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "GPIOD" ]
 pub const GPIOD: Peripheral<Gpiod> = unsafe { Peripheral::new(1073812480) };
 # [ doc = r" Register block" ]
-pub type Gpiod = Gpioa;
+pub struct Gpiod {
+    register_block: gpioa::RegisterBlock,
+}
+impl Deref for Gpiod {
+    type Target = gpioa::RegisterBlock;
+    fn deref(&self) -> &gpioa::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "GPIOE" ]
 pub const GPIOE: Peripheral<Gpioe> = unsafe { Peripheral::new(1073813504) };
 # [ doc = r" Register block" ]
-pub type Gpioe = Gpioa;
+pub struct Gpioe {
+    register_block: gpioa::RegisterBlock,
+}
+impl Deref for Gpioe {
+    type Target = gpioa::RegisterBlock;
+    fn deref(&self) -> &gpioa::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "GPIOF" ]
 pub const GPIOF: Peripheral<Gpiof> = unsafe { Peripheral::new(1073814528) };
 # [ doc = r" Register block" ]
-pub type Gpiof = Gpioa;
+pub struct Gpiof {
+    register_block: gpioa::RegisterBlock,
+}
+impl Deref for Gpiof {
+    type Target = gpioa::RegisterBlock;
+    fn deref(&self) -> &gpioa::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "GPIOG" ]
 pub const GPIOG: Peripheral<Gpiog> = unsafe { Peripheral::new(1073815552) };
 # [ doc = r" Register block" ]
-pub type Gpiog = Gpioa;
+pub struct Gpiog {
+    register_block: gpioa::RegisterBlock,
+}
+impl Deref for Gpiog {
+    type Target = gpioa::RegisterBlock;
+    fn deref(&self) -> &gpioa::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Alternate function I/O" ]
 pub const AFIO: Peripheral<Afio> = unsafe { Peripheral::new(1073807360) };
 # [ doc = "Alternate function I/O" ]
@@ -18671,7 +18756,16 @@ pub mod afio {
         }
     }
 }
-pub use afio::RegisterBlock as Afio;
+# [ doc = "Alternate function I/O" ]
+pub struct Afio {
+    register_block: afio::RegisterBlock,
+}
+impl Deref for Afio {
+    type Target = afio::RegisterBlock;
+    fn deref(&self) -> &afio::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "EXTI" ]
 pub const EXTI: Peripheral<Exti> = unsafe { Peripheral::new(1073808384) };
 # [ doc = "EXTI" ]
@@ -23505,7 +23599,16 @@ pub mod exti {
         }
     }
 }
-pub use exti::RegisterBlock as Exti;
+# [ doc = "EXTI" ]
+pub struct Exti {
+    register_block: exti::RegisterBlock,
+}
+impl Deref for Exti {
+    type Target = exti::RegisterBlock;
+    fn deref(&self) -> &exti::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "DMA controller" ]
 pub const DMA1: Peripheral<Dma1> = unsafe { Peripheral::new(1073872896) };
 # [ doc = "DMA controller" ]
@@ -30887,11 +30990,28 @@ pub mod dma1 {
         }
     }
 }
-pub use dma1::RegisterBlock as Dma1;
+# [ doc = "DMA controller" ]
+pub struct Dma1 {
+    register_block: dma1::RegisterBlock,
+}
+impl Deref for Dma1 {
+    type Target = dma1::RegisterBlock;
+    fn deref(&self) -> &dma1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "DMA2" ]
 pub const DMA2: Peripheral<Dma2> = unsafe { Peripheral::new(1073873920) };
 # [ doc = r" Register block" ]
-pub type Dma2 = Dma1;
+pub struct Dma2 {
+    register_block: dma1::RegisterBlock,
+}
+impl Deref for Dma2 {
+    type Target = dma1::RegisterBlock;
+    fn deref(&self) -> &dma1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Real time clock" ]
 pub const RTC: Peripheral<Rtc> = unsafe { Peripheral::new(1073752064) };
 # [ doc = "Real time clock" ]
@@ -31924,7 +32044,16 @@ pub mod rtc {
         }
     }
 }
-pub use rtc::RegisterBlock as Rtc;
+# [ doc = "Real time clock" ]
+pub struct Rtc {
+    register_block: rtc::RegisterBlock,
+}
+impl Deref for Rtc {
+    type Target = rtc::RegisterBlock;
+    fn deref(&self) -> &rtc::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Backup registers" ]
 pub const BKP: Peripheral<Bkp> = unsafe { Peripheral::new(1073769476) };
 # [ doc = "Backup registers" ]
@@ -36996,7 +37125,16 @@ pub mod bkp {
         }
     }
 }
-pub use bkp::RegisterBlock as Bkp;
+# [ doc = "Backup registers" ]
+pub struct Bkp {
+    register_block: bkp::RegisterBlock,
+}
+impl Deref for Bkp {
+    type Target = bkp::RegisterBlock;
+    fn deref(&self) -> &bkp::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Independent watchdog" ]
 pub const IWDG: Peripheral<Iwdg> = unsafe { Peripheral::new(1073754112) };
 # [ doc = "Independent watchdog" ]
@@ -37347,7 +37485,16 @@ pub mod iwdg {
         }
     }
 }
-pub use iwdg::RegisterBlock as Iwdg;
+# [ doc = "Independent watchdog" ]
+pub struct Iwdg {
+    register_block: iwdg::RegisterBlock,
+}
+impl Deref for Iwdg {
+    type Target = iwdg::RegisterBlock;
+    fn deref(&self) -> &iwdg::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Window watchdog" ]
 pub const WWDG: Peripheral<Wwdg> = unsafe { Peripheral::new(1073753088) };
 # [ doc = "Window watchdog" ]
@@ -37801,7 +37948,16 @@ pub mod wwdg {
         }
     }
 }
-pub use wwdg::RegisterBlock as Wwdg;
+# [ doc = "Window watchdog" ]
+pub struct Wwdg {
+    register_block: wwdg::RegisterBlock,
+}
+impl Deref for Wwdg {
+    type Target = wwdg::RegisterBlock;
+    fn deref(&self) -> &wwdg::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Advanced timer" ]
 pub const TIM1: Peripheral<Tim1> = unsafe { Peripheral::new(1073818624) };
 # [ doc = "Advanced timer" ]
@@ -44270,7 +44426,16 @@ pub mod tim1 {
         }
     }
 }
-pub use tim1::RegisterBlock as Tim1;
+# [ doc = "Advanced timer" ]
+pub struct Tim1 {
+    register_block: tim1::RegisterBlock,
+}
+impl Deref for Tim1 {
+    type Target = tim1::RegisterBlock;
+    fn deref(&self) -> &tim1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "General purpose timer" ]
 pub const TIM2: Peripheral<Tim2> = unsafe { Peripheral::new(1073741824) };
 # [ doc = "General purpose timer" ]
@@ -49421,19 +49586,52 @@ pub mod tim2 {
         }
     }
 }
-pub use tim2::RegisterBlock as Tim2;
+# [ doc = "General purpose timer" ]
+pub struct Tim2 {
+    register_block: tim2::RegisterBlock,
+}
+impl Deref for Tim2 {
+    type Target = tim2::RegisterBlock;
+    fn deref(&self) -> &tim2::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "TIM3" ]
 pub const TIM3: Peripheral<Tim3> = unsafe { Peripheral::new(1073742848) };
 # [ doc = r" Register block" ]
-pub type Tim3 = Tim2;
+pub struct Tim3 {
+    register_block: tim2::RegisterBlock,
+}
+impl Deref for Tim3 {
+    type Target = tim2::RegisterBlock;
+    fn deref(&self) -> &tim2::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "TIM4" ]
 pub const TIM4: Peripheral<Tim4> = unsafe { Peripheral::new(1073743872) };
 # [ doc = r" Register block" ]
-pub type Tim4 = Tim2;
+pub struct Tim4 {
+    register_block: tim2::RegisterBlock,
+}
+impl Deref for Tim4 {
+    type Target = tim2::RegisterBlock;
+    fn deref(&self) -> &tim2::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "TIM5" ]
 pub const TIM5: Peripheral<Tim5> = unsafe { Peripheral::new(1073744896) };
 # [ doc = r" Register block" ]
-pub type Tim5 = Tim2;
+pub struct Tim5 {
+    register_block: tim2::RegisterBlock,
+}
+impl Deref for Tim5 {
+    type Target = tim2::RegisterBlock;
+    fn deref(&self) -> &tim2::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "General purpose timer" ]
 pub const TIM12: Peripheral<Tim12> = unsafe { Peripheral::new(1073747968) };
 # [ doc = "General purpose timer" ]
@@ -52264,7 +52462,16 @@ pub mod tim12 {
         }
     }
 }
-pub use tim12::RegisterBlock as Tim12;
+# [ doc = "General purpose timer" ]
+pub struct Tim12 {
+    register_block: tim12::RegisterBlock,
+}
+impl Deref for Tim12 {
+    type Target = tim12::RegisterBlock;
+    fn deref(&self) -> &tim12::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "General purpose timer" ]
 pub const TIM13: Peripheral<Tim13> = unsafe { Peripheral::new(1073748992) };
 # [ doc = "General purpose timer" ]
@@ -53997,11 +54204,28 @@ pub mod tim13 {
         }
     }
 }
-pub use tim13::RegisterBlock as Tim13;
+# [ doc = "General purpose timer" ]
+pub struct Tim13 {
+    register_block: tim13::RegisterBlock,
+}
+impl Deref for Tim13 {
+    type Target = tim13::RegisterBlock;
+    fn deref(&self) -> &tim13::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "TIM14" ]
 pub const TIM14: Peripheral<Tim14> = unsafe { Peripheral::new(1073750016) };
 # [ doc = r" Register block" ]
-pub type Tim14 = Tim13;
+pub struct Tim14 {
+    register_block: tim13::RegisterBlock,
+}
+impl Deref for Tim14 {
+    type Target = tim13::RegisterBlock;
+    fn deref(&self) -> &tim13::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Basic timer" ]
 pub const TIM6: Peripheral<Tim6> = unsafe { Peripheral::new(1073745920) };
 # [ doc = "Basic timer" ]
@@ -55025,11 +55249,28 @@ pub mod tim6 {
         }
     }
 }
-pub use tim6::RegisterBlock as Tim6;
+# [ doc = "Basic timer" ]
+pub struct Tim6 {
+    register_block: tim6::RegisterBlock,
+}
+impl Deref for Tim6 {
+    type Target = tim6::RegisterBlock;
+    fn deref(&self) -> &tim6::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "TIM7" ]
 pub const TIM7: Peripheral<Tim7> = unsafe { Peripheral::new(1073746944) };
 # [ doc = r" Register block" ]
-pub type Tim7 = Tim6;
+pub struct Tim7 {
+    register_block: tim6::RegisterBlock,
+}
+impl Deref for Tim7 {
+    type Target = tim6::RegisterBlock;
+    fn deref(&self) -> &tim6::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Inter integrated circuit" ]
 pub const I2C1: Peripheral<I2c1> = unsafe { Peripheral::new(1073763328) };
 # [ doc = "Inter integrated circuit" ]
@@ -57467,11 +57708,28 @@ pub mod i2c1 {
         }
     }
 }
-pub use i2c1::RegisterBlock as I2c1;
+# [ doc = "Inter integrated circuit" ]
+pub struct I2c1 {
+    register_block: i2c1::RegisterBlock,
+}
+impl Deref for I2c1 {
+    type Target = i2c1::RegisterBlock;
+    fn deref(&self) -> &i2c1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "I2C2" ]
 pub const I2C2: Peripheral<I2c2> = unsafe { Peripheral::new(1073764352) };
 # [ doc = r" Register block" ]
-pub type I2c2 = I2c1;
+pub struct I2c2 {
+    register_block: i2c1::RegisterBlock,
+}
+impl Deref for I2c2 {
+    type Target = i2c1::RegisterBlock;
+    fn deref(&self) -> &i2c1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Serial peripheral interface" ]
 pub const SPI1: Peripheral<Spi1> = unsafe { Peripheral::new(1073819648) };
 # [ doc = "Serial peripheral interface" ]
@@ -58955,15 +59213,40 @@ pub mod spi1 {
         }
     }
 }
-pub use spi1::RegisterBlock as Spi1;
+# [ doc = "Serial peripheral interface" ]
+pub struct Spi1 {
+    register_block: spi1::RegisterBlock,
+}
+impl Deref for Spi1 {
+    type Target = spi1::RegisterBlock;
+    fn deref(&self) -> &spi1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "SPI2" ]
 pub const SPI2: Peripheral<Spi2> = unsafe { Peripheral::new(1073756160) };
 # [ doc = r" Register block" ]
-pub type Spi2 = Spi1;
+pub struct Spi2 {
+    register_block: spi1::RegisterBlock,
+}
+impl Deref for Spi2 {
+    type Target = spi1::RegisterBlock;
+    fn deref(&self) -> &spi1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "SPI3" ]
 pub const SPI3: Peripheral<Spi3> = unsafe { Peripheral::new(1073757184) };
 # [ doc = r" Register block" ]
-pub type Spi3 = Spi1;
+pub struct Spi3 {
+    register_block: spi1::RegisterBlock,
+}
+impl Deref for Spi3 {
+    type Target = spi1::RegisterBlock;
+    fn deref(&self) -> &spi1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Universal synchronous asynchronous receiver transmitter" ]
 pub const USART1: Peripheral<Usart1> = unsafe { Peripheral::new(1073821696) };
 # [ doc = "Universal synchronous asynchronous receiver transmitter" ]
@@ -61324,15 +61607,40 @@ pub mod usart1 {
         }
     }
 }
-pub use usart1::RegisterBlock as Usart1;
+# [ doc = "Universal synchronous asynchronous receiver transmitter" ]
+pub struct Usart1 {
+    register_block: usart1::RegisterBlock,
+}
+impl Deref for Usart1 {
+    type Target = usart1::RegisterBlock;
+    fn deref(&self) -> &usart1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "USART2" ]
 pub const USART2: Peripheral<Usart2> = unsafe { Peripheral::new(1073759232) };
 # [ doc = r" Register block" ]
-pub type Usart2 = Usart1;
+pub struct Usart2 {
+    register_block: usart1::RegisterBlock,
+}
+impl Deref for Usart2 {
+    type Target = usart1::RegisterBlock;
+    fn deref(&self) -> &usart1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "USART3" ]
 pub const USART3: Peripheral<Usart3> = unsafe { Peripheral::new(1073760256) };
 # [ doc = r" Register block" ]
-pub type Usart3 = Usart1;
+pub struct Usart3 {
+    register_block: usart1::RegisterBlock,
+}
+impl Deref for Usart3 {
+    type Target = usart1::RegisterBlock;
+    fn deref(&self) -> &usart1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Analog to digital converter" ]
 pub const ADC1: Peripheral<Adc1> = unsafe { Peripheral::new(1073816576) };
 # [ doc = "Analog to digital converter" ]
@@ -65688,7 +65996,16 @@ pub mod adc1 {
         }
     }
 }
-pub use adc1::RegisterBlock as Adc1;
+# [ doc = "Analog to digital converter" ]
+pub struct Adc1 {
+    register_block: adc1::RegisterBlock,
+}
+impl Deref for Adc1 {
+    type Target = adc1::RegisterBlock;
+    fn deref(&self) -> &adc1::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Digital to analog converter" ]
 pub const DAC: Peripheral<Dac> = unsafe { Peripheral::new(1073771520) };
 # [ doc = "Digital to analog converter" ]
@@ -67828,7 +68145,16 @@ pub mod dac {
         }
     }
 }
-pub use dac::RegisterBlock as Dac;
+# [ doc = "Digital to analog converter" ]
+pub struct Dac {
+    register_block: dac::RegisterBlock,
+}
+impl Deref for Dac {
+    type Target = dac::RegisterBlock;
+    fn deref(&self) -> &dac::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Debug support" ]
 pub const DBG: Peripheral<Dbg> = unsafe { Peripheral::new(3758366720) };
 # [ doc = "Debug support" ]
@@ -68875,7 +69201,16 @@ pub mod dbg {
         }
     }
 }
-pub use dbg::RegisterBlock as Dbg;
+# [ doc = "Debug support" ]
+pub struct Dbg {
+    register_block: dbg::RegisterBlock,
+}
+impl Deref for Dbg {
+    type Target = dbg::RegisterBlock;
+    fn deref(&self) -> &dbg::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Universal asynchronous receiver transmitter" ]
 pub const UART4: Peripheral<Uart4> = unsafe { Peripheral::new(1073761280) };
 # [ doc = "Universal asynchronous receiver transmitter" ]
@@ -70678,7 +71013,16 @@ pub mod uart4 {
         }
     }
 }
-pub use uart4::RegisterBlock as Uart4;
+# [ doc = "Universal asynchronous receiver transmitter" ]
+pub struct Uart4 {
+    register_block: uart4::RegisterBlock,
+}
+impl Deref for Uart4 {
+    type Target = uart4::RegisterBlock;
+    fn deref(&self) -> &uart4::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Universal asynchronous receiver transmitter" ]
 pub const UART5: Peripheral<Uart5> = unsafe { Peripheral::new(1073762304) };
 # [ doc = "Universal asynchronous receiver transmitter" ]
@@ -72440,7 +72784,16 @@ pub mod uart5 {
         }
     }
 }
-pub use uart5::RegisterBlock as Uart5;
+# [ doc = "Universal asynchronous receiver transmitter" ]
+pub struct Uart5 {
+    register_block: uart5::RegisterBlock,
+}
+impl Deref for Uart5 {
+    type Target = uart5::RegisterBlock;
+    fn deref(&self) -> &uart5::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "CRC calculation unit" ]
 pub const CRC: Peripheral<Crc> = unsafe { Peripheral::new(1073885184) };
 # [ doc = "CRC calculation unit" ]
@@ -72722,7 +73075,16 @@ pub mod crc {
         }
     }
 }
-pub use crc::RegisterBlock as Crc;
+# [ doc = "CRC calculation unit" ]
+pub struct Crc {
+    register_block: crc::RegisterBlock,
+}
+impl Deref for Crc {
+    type Target = crc::RegisterBlock;
+    fn deref(&self) -> &crc::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "FLASH" ]
 pub const FLASH: Peripheral<Flash> = unsafe { Peripheral::new(1073881088) };
 # [ doc = "FLASH" ]
@@ -73922,7 +74284,16 @@ pub mod flash {
         }
     }
 }
-pub use flash::RegisterBlock as Flash;
+# [ doc = "FLASH" ]
+pub struct Flash {
+    register_block: flash::RegisterBlock,
+}
+impl Deref for Flash {
+    type Target = flash::RegisterBlock;
+    fn deref(&self) -> &flash::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "General purpose timers" ]
 pub const TIM15: Peripheral<Tim15> = unsafe { Peripheral::new(1073823744) };
 # [ doc = "General purpose timers" ]
@@ -78164,7 +78535,16 @@ pub mod tim15 {
         }
     }
 }
-pub use tim15::RegisterBlock as Tim15;
+# [ doc = "General purpose timers" ]
+pub struct Tim15 {
+    register_block: tim15::RegisterBlock,
+}
+impl Deref for Tim15 {
+    type Target = tim15::RegisterBlock;
+    fn deref(&self) -> &tim15::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "General-purpose-timers" ]
 pub const TIM16: Peripheral<Tim16> = unsafe { Peripheral::new(1073824768) };
 # [ doc = "General-purpose-timers" ]
@@ -81435,11 +81815,28 @@ pub mod tim16 {
         }
     }
 }
-pub use tim16::RegisterBlock as Tim16;
+# [ doc = "General-purpose-timers" ]
+pub struct Tim16 {
+    register_block: tim16::RegisterBlock,
+}
+impl Deref for Tim16 {
+    type Target = tim16::RegisterBlock;
+    fn deref(&self) -> &tim16::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "TIM17" ]
 pub const TIM17: Peripheral<Tim17> = unsafe { Peripheral::new(1073825792) };
 # [ doc = r" Register block" ]
-pub type Tim17 = Tim16;
+pub struct Tim17 {
+    register_block: tim16::RegisterBlock,
+}
+impl Deref for Tim17 {
+    type Target = tim16::RegisterBlock;
+    fn deref(&self) -> &tim16::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "HDMI-CEC controller" ]
 pub const CEC: Peripheral<Cec> = unsafe { Peripheral::new(1073772544) };
 # [ doc = "HDMI-CEC controller" ]
@@ -82616,7 +83013,16 @@ pub mod cec {
         }
     }
 }
-pub use cec::RegisterBlock as Cec;
+# [ doc = "HDMI-CEC controller" ]
+pub struct Cec {
+    register_block: cec::RegisterBlock,
+}
+impl Deref for Cec {
+    type Target = cec::RegisterBlock;
+    fn deref(&self) -> &cec::RegisterBlock {
+        &self.register_block
+    }
+}
 # [ doc = "Nested Vectored Interrupt Controller" ]
 pub const NVIC: Peripheral<Nvic> = unsafe { Peripheral::new(3758153728) };
 # [ doc = "Nested Vectored Interrupt Controller" ]
@@ -87142,4 +87548,13 @@ pub mod nvic {
         }
     }
 }
-pub use nvic::RegisterBlock as Nvic;
+# [ doc = "Nested Vectored Interrupt Controller" ]
+pub struct Nvic {
+    register_block: nvic::RegisterBlock,
+}
+impl Deref for Nvic {
+    type Target = nvic::RegisterBlock;
+    fn deref(&self) -> &nvic::RegisterBlock {
+        &self.register_block
+    }
+}
