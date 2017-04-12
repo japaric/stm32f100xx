@@ -1,4 +1,4 @@
-# ! [ doc = "Peripheral access API for STM32F100XX microcontrollers (generated using svd2rust v0.5.0)" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]extern crate cortex_m ;
+# ! [ doc = "Peripheral access API for STM32F100XX microcontrollers (generated using svd2rust v0.6.0)" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]extern crate cortex_m ;
 extern crate vcell ;
 use core::ops::Deref;
 use cortex_m::peripheral::Peripheral;
@@ -12,433 +12,746 @@ pub mod interrupt {
         _0: (),
     }
     unsafe impl Context for WwdgIrq {}
+    unsafe impl Nr for WwdgIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            0
+        }
+    }
     # [ doc = "1 - PVD through EXTI line detection interrupt" ]
     pub struct PvdIrq {
         _0: (),
     }
     unsafe impl Context for PvdIrq {}
+    unsafe impl Nr for PvdIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            1
+        }
+    }
     # [ doc = "2 - Tamper and TimeStamp through EXTI line interrupts" ]
     pub struct TamperStampIrq {
         _0: (),
     }
     unsafe impl Context for TamperStampIrq {}
+    unsafe impl Nr for TamperStampIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            2
+        }
+    }
     # [ doc = "3 - RTC Wakeup through EXTI line interrupt" ]
     pub struct RtcWkupIrq {
         _0: (),
     }
     unsafe impl Context for RtcWkupIrq {}
+    unsafe impl Nr for RtcWkupIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            3
+        }
+    }
     # [ doc = "4 - Flash global interrupt" ]
     pub struct FlashIrq {
         _0: (),
     }
     unsafe impl Context for FlashIrq {}
+    unsafe impl Nr for FlashIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            4
+        }
+    }
     # [ doc = "5 - RCC global interrupt" ]
     pub struct RccIrq {
         _0: (),
     }
     unsafe impl Context for RccIrq {}
+    unsafe impl Nr for RccIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            5
+        }
+    }
     # [ doc = "6 - EXTI Line0 interrupt" ]
     pub struct Exti0Irq {
         _0: (),
     }
     unsafe impl Context for Exti0Irq {}
+    unsafe impl Nr for Exti0Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            6
+        }
+    }
     # [ doc = "7 - EXTI Line1 interrupt" ]
     pub struct Exti1Irq {
         _0: (),
     }
     unsafe impl Context for Exti1Irq {}
+    unsafe impl Nr for Exti1Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            7
+        }
+    }
     # [ doc = "8 - EXTI Line2 interrupt" ]
     pub struct Exti2Irq {
         _0: (),
     }
     unsafe impl Context for Exti2Irq {}
+    unsafe impl Nr for Exti2Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            8
+        }
+    }
     # [ doc = "9 - EXTI Line3 interrupt" ]
     pub struct Exti3Irq {
         _0: (),
     }
     unsafe impl Context for Exti3Irq {}
+    unsafe impl Nr for Exti3Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            9
+        }
+    }
     # [ doc = "10 - EXTI Line4 interrupt" ]
     pub struct Exti4Irq {
         _0: (),
     }
     unsafe impl Context for Exti4Irq {}
+    unsafe impl Nr for Exti4Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            10
+        }
+    }
     # [ doc = "11 - DMA1 Channel1 global interrupt" ]
     pub struct Dma1Channel1Irq {
         _0: (),
     }
     unsafe impl Context for Dma1Channel1Irq {}
+    unsafe impl Nr for Dma1Channel1Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            11
+        }
+    }
     # [ doc = "12 - DMA1 Channel2 global interrupt" ]
     pub struct Dma1Channel2Irq {
         _0: (),
     }
     unsafe impl Context for Dma1Channel2Irq {}
+    unsafe impl Nr for Dma1Channel2Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            12
+        }
+    }
     # [ doc = "13 - DMA1 Channel3 global interrupt" ]
     pub struct Dma1Channel3Irq {
         _0: (),
     }
     unsafe impl Context for Dma1Channel3Irq {}
+    unsafe impl Nr for Dma1Channel3Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            13
+        }
+    }
     # [ doc = "14 - DMA1 Channel4 global interrupt" ]
     pub struct Dma1Channel4Irq {
         _0: (),
     }
     unsafe impl Context for Dma1Channel4Irq {}
+    unsafe impl Nr for Dma1Channel4Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            14
+        }
+    }
     # [ doc = "15 - DMA1 Channel5 global interrupt" ]
     pub struct Dma1Channel5Irq {
         _0: (),
     }
     unsafe impl Context for Dma1Channel5Irq {}
+    unsafe impl Nr for Dma1Channel5Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            15
+        }
+    }
     # [ doc = "16 - DMA1 Channel6 global interrupt" ]
     pub struct Dma1Channel6Irq {
         _0: (),
     }
     unsafe impl Context for Dma1Channel6Irq {}
+    unsafe impl Nr for Dma1Channel6Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            16
+        }
+    }
     # [ doc = "17 - DMA1 Channel7 global interrupt" ]
     pub struct Dma1Channel7Irq {
         _0: (),
     }
     unsafe impl Context for Dma1Channel7Irq {}
+    unsafe impl Nr for Dma1Channel7Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            17
+        }
+    }
     # [ doc = "18 - ADC1 global interrupt" ]
     pub struct AdcIrq {
         _0: (),
     }
     unsafe impl Context for AdcIrq {}
+    unsafe impl Nr for AdcIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            18
+        }
+    }
     # [ doc = "23 - EXTI Line[9:5] interrupts" ]
     pub struct Exti95Irq {
         _0: (),
     }
     unsafe impl Context for Exti95Irq {}
+    unsafe impl Nr for Exti95Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            23
+        }
+    }
     # [ doc = "24 - TIM1 Break interrupt and TIM15 global interrupt" ]
     pub struct Tim1BrkTim15Irq {
         _0: (),
     }
     unsafe impl Context for Tim1BrkTim15Irq {}
+    unsafe impl Nr for Tim1BrkTim15Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            24
+        }
+    }
     # [ doc = "25 - TIM1 Update interrupt and TIM16 global interrupt" ]
     pub struct Tim1UpTim16Irq {
         _0: (),
     }
     unsafe impl Context for Tim1UpTim16Irq {}
+    unsafe impl Nr for Tim1UpTim16Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            25
+        }
+    }
     # [ doc = "26 - TIM1 Trigger and Commutation interrupts and TIM17 global interrupt" ]
     pub struct Tim1TrgComTim17Irq {
         _0: (),
     }
     unsafe impl Context for Tim1TrgComTim17Irq {}
+    unsafe impl Nr for Tim1TrgComTim17Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            26
+        }
+    }
     # [ doc = "27 - TIM1 Capture Compare interrupt" ]
     pub struct Tim1CcIrq {
         _0: (),
     }
     unsafe impl Context for Tim1CcIrq {}
+    unsafe impl Nr for Tim1CcIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            27
+        }
+    }
     # [ doc = "28 - TIM2 global interrupt" ]
     pub struct Tim2Irq {
         _0: (),
     }
     unsafe impl Context for Tim2Irq {}
+    unsafe impl Nr for Tim2Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            28
+        }
+    }
     # [ doc = "29 - TIM3 global interrupt" ]
     pub struct Tim3Irq {
         _0: (),
     }
     unsafe impl Context for Tim3Irq {}
+    unsafe impl Nr for Tim3Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            29
+        }
+    }
     # [ doc = "30 - TIM4 global interrupt" ]
     pub struct Tim4Irq {
         _0: (),
     }
     unsafe impl Context for Tim4Irq {}
+    unsafe impl Nr for Tim4Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            30
+        }
+    }
     # [ doc = "31 - I2C1 event interrupt" ]
     pub struct I2c1EvIrq {
         _0: (),
     }
     unsafe impl Context for I2c1EvIrq {}
+    unsafe impl Nr for I2c1EvIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            31
+        }
+    }
     # [ doc = "32 - I2C1 error interrupt" ]
     pub struct I2c1ErIrq {
         _0: (),
     }
     unsafe impl Context for I2c1ErIrq {}
+    unsafe impl Nr for I2c1ErIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            32
+        }
+    }
     # [ doc = "33 - I2C2 event interrupt" ]
     pub struct I2c2EvIrq {
         _0: (),
     }
     unsafe impl Context for I2c2EvIrq {}
+    unsafe impl Nr for I2c2EvIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            33
+        }
+    }
     # [ doc = "34 - I2C2 error interrupt" ]
     pub struct I2c2ErIrq {
         _0: (),
     }
     unsafe impl Context for I2c2ErIrq {}
+    unsafe impl Nr for I2c2ErIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            34
+        }
+    }
     # [ doc = "35 - SPI1 global interrupt" ]
     pub struct Spi1Irq {
         _0: (),
     }
     unsafe impl Context for Spi1Irq {}
+    unsafe impl Nr for Spi1Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            35
+        }
+    }
     # [ doc = "36 - SPI2 global interrupt" ]
     pub struct Spi2Irq {
         _0: (),
     }
     unsafe impl Context for Spi2Irq {}
+    unsafe impl Nr for Spi2Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            36
+        }
+    }
     # [ doc = "37 - USART1 global interrupt" ]
     pub struct Usart1Irq {
         _0: (),
     }
     unsafe impl Context for Usart1Irq {}
+    unsafe impl Nr for Usart1Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            37
+        }
+    }
     # [ doc = "38 - USART2 global interrupt" ]
     pub struct Usart2Irq {
         _0: (),
     }
     unsafe impl Context for Usart2Irq {}
+    unsafe impl Nr for Usart2Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            38
+        }
+    }
     # [ doc = "39 - USART3 global interrupt" ]
     pub struct Usart3Irq {
         _0: (),
     }
     unsafe impl Context for Usart3Irq {}
+    unsafe impl Nr for Usart3Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            39
+        }
+    }
     # [ doc = "40 - EXTI Line[15:10] interrupts" ]
     pub struct Exti1510Irq {
         _0: (),
     }
     unsafe impl Context for Exti1510Irq {}
+    unsafe impl Nr for Exti1510Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            40
+        }
+    }
     # [ doc = "41 - RTC Alarms through EXTI line interrupt" ]
     pub struct RtcalarmIrq {
         _0: (),
     }
     unsafe impl Context for RtcalarmIrq {}
+    unsafe impl Nr for RtcalarmIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            41
+        }
+    }
     # [ doc = "42 - CEC global interrupt" ]
     pub struct CecIrq {
         _0: (),
     }
     unsafe impl Context for CecIrq {}
+    unsafe impl Nr for CecIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            42
+        }
+    }
     # [ doc = "43 - TIM12 global interrupt" ]
     pub struct Tim12Irq {
         _0: (),
     }
     unsafe impl Context for Tim12Irq {}
+    unsafe impl Nr for Tim12Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            43
+        }
+    }
     # [ doc = "44 - TIM13 global interrupt" ]
     pub struct Tim13Irq {
         _0: (),
     }
     unsafe impl Context for Tim13Irq {}
+    unsafe impl Nr for Tim13Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            44
+        }
+    }
     # [ doc = "48 - FSMC global interrupt" ]
     pub struct FsmcIrq {
         _0: (),
     }
     unsafe impl Context for FsmcIrq {}
+    unsafe impl Nr for FsmcIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            48
+        }
+    }
     # [ doc = "50 - TIM5 global interrupt" ]
     pub struct Tim5Irq {
         _0: (),
     }
     unsafe impl Context for Tim5Irq {}
+    unsafe impl Nr for Tim5Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            50
+        }
+    }
     # [ doc = "51 - SPI3 global interrupt" ]
     pub struct Spi3Irq {
         _0: (),
     }
     unsafe impl Context for Spi3Irq {}
+    unsafe impl Nr for Spi3Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            51
+        }
+    }
     # [ doc = "52 - UART4 global interrupt" ]
     pub struct Uart4Irq {
         _0: (),
     }
     unsafe impl Context for Uart4Irq {}
+    unsafe impl Nr for Uart4Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            52
+        }
+    }
     # [ doc = "53 - UART5 global interrupt" ]
     pub struct Uart5Irq {
         _0: (),
     }
     unsafe impl Context for Uart5Irq {}
+    unsafe impl Nr for Uart5Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            53
+        }
+    }
     # [ doc = "54 - TIM6 global and DAC underrun interrupts" ]
     pub struct Tim6DacIrq {
         _0: (),
     }
     unsafe impl Context for Tim6DacIrq {}
+    unsafe impl Nr for Tim6DacIrq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            54
+        }
+    }
     # [ doc = "55 - TIM7 global interrupt" ]
     pub struct Tim7Irq {
         _0: (),
     }
     unsafe impl Context for Tim7Irq {}
+    unsafe impl Nr for Tim7Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            55
+        }
+    }
     # [ doc = "56 - DMA2 Channel1 global interrupt" ]
     pub struct Dma2Channel1Irq {
         _0: (),
     }
     unsafe impl Context for Dma2Channel1Irq {}
+    unsafe impl Nr for Dma2Channel1Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            56
+        }
+    }
     # [ doc = "57 - DMA2 Channel2 global interrupt" ]
     pub struct Dma2Channel2Irq {
         _0: (),
     }
     unsafe impl Context for Dma2Channel2Irq {}
+    unsafe impl Nr for Dma2Channel2Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            57
+        }
+    }
     # [ doc = "58 - DMA2 Channel3 global interrupt" ]
     pub struct Dma2Channel3Irq {
         _0: (),
     }
     unsafe impl Context for Dma2Channel3Irq {}
+    unsafe impl Nr for Dma2Channel3Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            58
+        }
+    }
     # [ doc = "59 - DMA2 Channel4 and DMA2 Channel5 global interrupt" ]
     pub struct Dma2Channel45Irq {
         _0: (),
     }
     unsafe impl Context for Dma2Channel45Irq {}
+    unsafe impl Nr for Dma2Channel45Irq {
+        # [ inline ( always ) ]
+        fn nr(&self) -> u8 {
+            59
+        }
+    }
     use cortex_m::Reserved;
     # [ doc = r" Interrupt handlers" ]
+    # [ allow ( non_snake_case ) ]
     # [ repr ( C ) ]
     pub struct Handlers {
         # [ doc = "0 - Window Watchdog interrupt" ]
-        pub wwdg_irq: extern "C" fn(WwdgIrq),
+        pub WwdgIrq: extern "C" fn(WwdgIrq),
         # [ doc = "1 - PVD through EXTI line detection interrupt" ]
-        pub pvd_irq: extern "C" fn(PvdIrq),
+        pub PvdIrq: extern "C" fn(PvdIrq),
         # [ doc = "2 - Tamper and TimeStamp through EXTI line interrupts" ]
-        pub tamper_stamp_irq: extern "C" fn(TamperStampIrq),
+        pub TamperStampIrq: extern "C" fn(TamperStampIrq),
         # [ doc = "3 - RTC Wakeup through EXTI line interrupt" ]
-        pub rtc_wkup_irq: extern "C" fn(RtcWkupIrq),
+        pub RtcWkupIrq: extern "C" fn(RtcWkupIrq),
         # [ doc = "4 - Flash global interrupt" ]
-        pub flash_irq: extern "C" fn(FlashIrq),
+        pub FlashIrq: extern "C" fn(FlashIrq),
         # [ doc = "5 - RCC global interrupt" ]
-        pub rcc_irq: extern "C" fn(RccIrq),
+        pub RccIrq: extern "C" fn(RccIrq),
         # [ doc = "6 - EXTI Line0 interrupt" ]
-        pub exti0_irq: extern "C" fn(Exti0Irq),
+        pub Exti0Irq: extern "C" fn(Exti0Irq),
         # [ doc = "7 - EXTI Line1 interrupt" ]
-        pub exti1_irq: extern "C" fn(Exti1Irq),
+        pub Exti1Irq: extern "C" fn(Exti1Irq),
         # [ doc = "8 - EXTI Line2 interrupt" ]
-        pub exti2_irq: extern "C" fn(Exti2Irq),
+        pub Exti2Irq: extern "C" fn(Exti2Irq),
         # [ doc = "9 - EXTI Line3 interrupt" ]
-        pub exti3_irq: extern "C" fn(Exti3Irq),
+        pub Exti3Irq: extern "C" fn(Exti3Irq),
         # [ doc = "10 - EXTI Line4 interrupt" ]
-        pub exti4_irq: extern "C" fn(Exti4Irq),
+        pub Exti4Irq: extern "C" fn(Exti4Irq),
         # [ doc = "11 - DMA1 Channel1 global interrupt" ]
-        pub dma1_channel1_irq: extern "C" fn(Dma1Channel1Irq),
+        pub Dma1Channel1Irq: extern "C" fn(Dma1Channel1Irq),
         # [ doc = "12 - DMA1 Channel2 global interrupt" ]
-        pub dma1_channel2_irq: extern "C" fn(Dma1Channel2Irq),
+        pub Dma1Channel2Irq: extern "C" fn(Dma1Channel2Irq),
         # [ doc = "13 - DMA1 Channel3 global interrupt" ]
-        pub dma1_channel3_irq: extern "C" fn(Dma1Channel3Irq),
+        pub Dma1Channel3Irq: extern "C" fn(Dma1Channel3Irq),
         # [ doc = "14 - DMA1 Channel4 global interrupt" ]
-        pub dma1_channel4_irq: extern "C" fn(Dma1Channel4Irq),
+        pub Dma1Channel4Irq: extern "C" fn(Dma1Channel4Irq),
         # [ doc = "15 - DMA1 Channel5 global interrupt" ]
-        pub dma1_channel5_irq: extern "C" fn(Dma1Channel5Irq),
+        pub Dma1Channel5Irq: extern "C" fn(Dma1Channel5Irq),
         # [ doc = "16 - DMA1 Channel6 global interrupt" ]
-        pub dma1_channel6_irq: extern "C" fn(Dma1Channel6Irq),
+        pub Dma1Channel6Irq: extern "C" fn(Dma1Channel6Irq),
         # [ doc = "17 - DMA1 Channel7 global interrupt" ]
-        pub dma1_channel7_irq: extern "C" fn(Dma1Channel7Irq),
+        pub Dma1Channel7Irq: extern "C" fn(Dma1Channel7Irq),
         # [ doc = "18 - ADC1 global interrupt" ]
-        pub adc_irq: extern "C" fn(AdcIrq),
+        pub AdcIrq: extern "C" fn(AdcIrq),
         # [ doc = r" Reserved spot in the vector table" ]
         pub _reserved0: [Reserved; 4],
         # [ doc = "23 - EXTI Line[9:5] interrupts" ]
-        pub exti9_5_irq: extern "C" fn(Exti95Irq),
+        pub Exti95Irq: extern "C" fn(Exti95Irq),
         # [ doc = "24 - TIM1 Break interrupt and TIM15 global interrupt" ]
-        pub tim1_brk_tim15_irq: extern "C" fn(Tim1BrkTim15Irq),
+        pub Tim1BrkTim15Irq: extern "C" fn(Tim1BrkTim15Irq),
         # [ doc = "25 - TIM1 Update interrupt and TIM16 global interrupt" ]
-        pub tim1_up_tim16_irq: extern "C" fn(Tim1UpTim16Irq),
+        pub Tim1UpTim16Irq: extern "C" fn(Tim1UpTim16Irq),
         # [ doc = "26 - TIM1 Trigger and Commutation interrupts and TIM17 global interrupt" ]
-        pub tim1_trg_com_tim17_irq: extern "C" fn(Tim1TrgComTim17Irq),
+        pub Tim1TrgComTim17Irq: extern "C" fn(Tim1TrgComTim17Irq),
         # [ doc = "27 - TIM1 Capture Compare interrupt" ]
-        pub tim1_cc_irq: extern "C" fn(Tim1CcIrq),
+        pub Tim1CcIrq: extern "C" fn(Tim1CcIrq),
         # [ doc = "28 - TIM2 global interrupt" ]
-        pub tim2_irq: extern "C" fn(Tim2Irq),
+        pub Tim2Irq: extern "C" fn(Tim2Irq),
         # [ doc = "29 - TIM3 global interrupt" ]
-        pub tim3_irq: extern "C" fn(Tim3Irq),
+        pub Tim3Irq: extern "C" fn(Tim3Irq),
         # [ doc = "30 - TIM4 global interrupt" ]
-        pub tim4_irq: extern "C" fn(Tim4Irq),
+        pub Tim4Irq: extern "C" fn(Tim4Irq),
         # [ doc = "31 - I2C1 event interrupt" ]
-        pub i2c1_ev_irq: extern "C" fn(I2c1EvIrq),
+        pub I2c1EvIrq: extern "C" fn(I2c1EvIrq),
         # [ doc = "32 - I2C1 error interrupt" ]
-        pub i2c1_er_irq: extern "C" fn(I2c1ErIrq),
+        pub I2c1ErIrq: extern "C" fn(I2c1ErIrq),
         # [ doc = "33 - I2C2 event interrupt" ]
-        pub i2c2_ev_irq: extern "C" fn(I2c2EvIrq),
+        pub I2c2EvIrq: extern "C" fn(I2c2EvIrq),
         # [ doc = "34 - I2C2 error interrupt" ]
-        pub i2c2_er_irq: extern "C" fn(I2c2ErIrq),
+        pub I2c2ErIrq: extern "C" fn(I2c2ErIrq),
         # [ doc = "35 - SPI1 global interrupt" ]
-        pub spi1_irq: extern "C" fn(Spi1Irq),
+        pub Spi1Irq: extern "C" fn(Spi1Irq),
         # [ doc = "36 - SPI2 global interrupt" ]
-        pub spi2_irq: extern "C" fn(Spi2Irq),
+        pub Spi2Irq: extern "C" fn(Spi2Irq),
         # [ doc = "37 - USART1 global interrupt" ]
-        pub usart1_irq: extern "C" fn(Usart1Irq),
+        pub Usart1Irq: extern "C" fn(Usart1Irq),
         # [ doc = "38 - USART2 global interrupt" ]
-        pub usart2_irq: extern "C" fn(Usart2Irq),
+        pub Usart2Irq: extern "C" fn(Usart2Irq),
         # [ doc = "39 - USART3 global interrupt" ]
-        pub usart3_irq: extern "C" fn(Usart3Irq),
+        pub Usart3Irq: extern "C" fn(Usart3Irq),
         # [ doc = "40 - EXTI Line[15:10] interrupts" ]
-        pub exti15_10_irq: extern "C" fn(Exti1510Irq),
+        pub Exti1510Irq: extern "C" fn(Exti1510Irq),
         # [ doc = "41 - RTC Alarms through EXTI line interrupt" ]
-        pub rtcalarm_irq: extern "C" fn(RtcalarmIrq),
+        pub RtcalarmIrq: extern "C" fn(RtcalarmIrq),
         # [ doc = "42 - CEC global interrupt" ]
-        pub cec_irq: extern "C" fn(CecIrq),
+        pub CecIrq: extern "C" fn(CecIrq),
         # [ doc = "43 - TIM12 global interrupt" ]
-        pub tim12_irq: extern "C" fn(Tim12Irq),
+        pub Tim12Irq: extern "C" fn(Tim12Irq),
         # [ doc = "44 - TIM13 global interrupt" ]
-        pub tim13_irq: extern "C" fn(Tim13Irq),
+        pub Tim13Irq: extern "C" fn(Tim13Irq),
         # [ doc = r" Reserved spot in the vector table" ]
         pub _reserved1: [Reserved; 3],
         # [ doc = "48 - FSMC global interrupt" ]
-        pub fsmc_irq: extern "C" fn(FsmcIrq),
+        pub FsmcIrq: extern "C" fn(FsmcIrq),
         # [ doc = r" Reserved spot in the vector table" ]
         pub _reserved2: [Reserved; 1],
         # [ doc = "50 - TIM5 global interrupt" ]
-        pub tim5_irq: extern "C" fn(Tim5Irq),
+        pub Tim5Irq: extern "C" fn(Tim5Irq),
         # [ doc = "51 - SPI3 global interrupt" ]
-        pub spi3_irq: extern "C" fn(Spi3Irq),
+        pub Spi3Irq: extern "C" fn(Spi3Irq),
         # [ doc = "52 - UART4 global interrupt" ]
-        pub uart4_irq: extern "C" fn(Uart4Irq),
+        pub Uart4Irq: extern "C" fn(Uart4Irq),
         # [ doc = "53 - UART5 global interrupt" ]
-        pub uart5_irq: extern "C" fn(Uart5Irq),
+        pub Uart5Irq: extern "C" fn(Uart5Irq),
         # [ doc = "54 - TIM6 global and DAC underrun interrupts" ]
-        pub tim6_dac_irq: extern "C" fn(Tim6DacIrq),
+        pub Tim6DacIrq: extern "C" fn(Tim6DacIrq),
         # [ doc = "55 - TIM7 global interrupt" ]
-        pub tim7_irq: extern "C" fn(Tim7Irq),
+        pub Tim7Irq: extern "C" fn(Tim7Irq),
         # [ doc = "56 - DMA2 Channel1 global interrupt" ]
-        pub dma2_channel1_irq: extern "C" fn(Dma2Channel1Irq),
+        pub Dma2Channel1Irq: extern "C" fn(Dma2Channel1Irq),
         # [ doc = "57 - DMA2 Channel2 global interrupt" ]
-        pub dma2_channel2_irq: extern "C" fn(Dma2Channel2Irq),
+        pub Dma2Channel2Irq: extern "C" fn(Dma2Channel2Irq),
         # [ doc = "58 - DMA2 Channel3 global interrupt" ]
-        pub dma2_channel3_irq: extern "C" fn(Dma2Channel3Irq),
+        pub Dma2Channel3Irq: extern "C" fn(Dma2Channel3Irq),
         # [ doc = "59 - DMA2 Channel4 and DMA2 Channel5 global interrupt" ]
-        pub dma2_channel4_5_irq: extern "C" fn(Dma2Channel45Irq),
+        pub Dma2Channel45Irq: extern "C" fn(Dma2Channel45Irq),
     }
     # [ doc = r" Default interrupt handlers" ]
     pub const DEFAULT_HANDLERS: Handlers = Handlers {
-        wwdg_irq: exception::default_handler,
-        pvd_irq: exception::default_handler,
-        tamper_stamp_irq: exception::default_handler,
-        rtc_wkup_irq: exception::default_handler,
-        flash_irq: exception::default_handler,
-        rcc_irq: exception::default_handler,
-        exti0_irq: exception::default_handler,
-        exti1_irq: exception::default_handler,
-        exti2_irq: exception::default_handler,
-        exti3_irq: exception::default_handler,
-        exti4_irq: exception::default_handler,
-        dma1_channel1_irq: exception::default_handler,
-        dma1_channel2_irq: exception::default_handler,
-        dma1_channel3_irq: exception::default_handler,
-        dma1_channel4_irq: exception::default_handler,
-        dma1_channel5_irq: exception::default_handler,
-        dma1_channel6_irq: exception::default_handler,
-        dma1_channel7_irq: exception::default_handler,
-        adc_irq: exception::default_handler,
+        WwdgIrq: exception::default_handler,
+        PvdIrq: exception::default_handler,
+        TamperStampIrq: exception::default_handler,
+        RtcWkupIrq: exception::default_handler,
+        FlashIrq: exception::default_handler,
+        RccIrq: exception::default_handler,
+        Exti0Irq: exception::default_handler,
+        Exti1Irq: exception::default_handler,
+        Exti2Irq: exception::default_handler,
+        Exti3Irq: exception::default_handler,
+        Exti4Irq: exception::default_handler,
+        Dma1Channel1Irq: exception::default_handler,
+        Dma1Channel2Irq: exception::default_handler,
+        Dma1Channel3Irq: exception::default_handler,
+        Dma1Channel4Irq: exception::default_handler,
+        Dma1Channel5Irq: exception::default_handler,
+        Dma1Channel6Irq: exception::default_handler,
+        Dma1Channel7Irq: exception::default_handler,
+        AdcIrq: exception::default_handler,
         _reserved0: [Reserved::Vector; 4],
-        exti9_5_irq: exception::default_handler,
-        tim1_brk_tim15_irq: exception::default_handler,
-        tim1_up_tim16_irq: exception::default_handler,
-        tim1_trg_com_tim17_irq: exception::default_handler,
-        tim1_cc_irq: exception::default_handler,
-        tim2_irq: exception::default_handler,
-        tim3_irq: exception::default_handler,
-        tim4_irq: exception::default_handler,
-        i2c1_ev_irq: exception::default_handler,
-        i2c1_er_irq: exception::default_handler,
-        i2c2_ev_irq: exception::default_handler,
-        i2c2_er_irq: exception::default_handler,
-        spi1_irq: exception::default_handler,
-        spi2_irq: exception::default_handler,
-        usart1_irq: exception::default_handler,
-        usart2_irq: exception::default_handler,
-        usart3_irq: exception::default_handler,
-        exti15_10_irq: exception::default_handler,
-        rtcalarm_irq: exception::default_handler,
-        cec_irq: exception::default_handler,
-        tim12_irq: exception::default_handler,
-        tim13_irq: exception::default_handler,
+        Exti95Irq: exception::default_handler,
+        Tim1BrkTim15Irq: exception::default_handler,
+        Tim1UpTim16Irq: exception::default_handler,
+        Tim1TrgComTim17Irq: exception::default_handler,
+        Tim1CcIrq: exception::default_handler,
+        Tim2Irq: exception::default_handler,
+        Tim3Irq: exception::default_handler,
+        Tim4Irq: exception::default_handler,
+        I2c1EvIrq: exception::default_handler,
+        I2c1ErIrq: exception::default_handler,
+        I2c2EvIrq: exception::default_handler,
+        I2c2ErIrq: exception::default_handler,
+        Spi1Irq: exception::default_handler,
+        Spi2Irq: exception::default_handler,
+        Usart1Irq: exception::default_handler,
+        Usart2Irq: exception::default_handler,
+        Usart3Irq: exception::default_handler,
+        Exti1510Irq: exception::default_handler,
+        RtcalarmIrq: exception::default_handler,
+        CecIrq: exception::default_handler,
+        Tim12Irq: exception::default_handler,
+        Tim13Irq: exception::default_handler,
         _reserved1: [Reserved::Vector; 3],
-        fsmc_irq: exception::default_handler,
+        FsmcIrq: exception::default_handler,
         _reserved2: [Reserved::Vector; 1],
-        tim5_irq: exception::default_handler,
-        spi3_irq: exception::default_handler,
-        uart4_irq: exception::default_handler,
-        uart5_irq: exception::default_handler,
-        tim6_dac_irq: exception::default_handler,
-        tim7_irq: exception::default_handler,
-        dma2_channel1_irq: exception::default_handler,
-        dma2_channel2_irq: exception::default_handler,
-        dma2_channel3_irq: exception::default_handler,
-        dma2_channel4_5_irq: exception::default_handler,
+        Tim5Irq: exception::default_handler,
+        Spi3Irq: exception::default_handler,
+        Uart4Irq: exception::default_handler,
+        Uart5Irq: exception::default_handler,
+        Tim6DacIrq: exception::default_handler,
+        Tim7Irq: exception::default_handler,
+        Dma2Channel1Irq: exception::default_handler,
+        Dma2Channel2Irq: exception::default_handler,
+        Dma2Channel3Irq: exception::default_handler,
+        Dma2Channel45Irq: exception::default_handler,
     };
     # [ doc = r" Enumeration of all the interrupts" ]
     pub enum Interrupt {
