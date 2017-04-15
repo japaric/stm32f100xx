@@ -1,4 +1,4 @@
-# ! [ doc = "Peripheral access API for STM32F100XX microcontrollers (generated using svd2rust v0.6.0)" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]extern crate cortex_m ;
+# ! [ doc = "Peripheral access API for STM32F100XX microcontrollers (generated using svd2rust v0.6.1)" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]extern crate cortex_m ;
 extern crate vcell ;
 use core::ops::Deref;
 use cortex_m::peripheral::Peripheral;
@@ -926,6 +926,7 @@ pub const FSMC: Peripheral<Fsmc> = unsafe { Peripheral::new(2684354560) };
 pub mod fsmc {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - SRAM/NOR-Flash chip-select control register 1" ]
         pub bcr1: Bcr1,
@@ -6128,6 +6129,7 @@ pub const PWR: Peripheral<Pwr> = unsafe { Peripheral::new(1073770496) };
 pub mod pwr {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Power control register (PWR_CR)" ]
         pub cr: Cr,
@@ -6670,6 +6672,7 @@ pub const RCC: Peripheral<Rcc> = unsafe { Peripheral::new(1073876992) };
 pub mod rcc {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Clock control register" ]
         pub cr: Cr,
@@ -12483,6 +12486,7 @@ pub const GPIOA: Peripheral<Gpioa> = unsafe { Peripheral::new(1073809408) };
 pub mod gpioa {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Port configuration register low (GPIOn_CRL)" ]
         pub crl: Crl,
@@ -16902,6 +16906,7 @@ pub const AFIO: Peripheral<Afio> = unsafe { Peripheral::new(1073807360) };
 pub mod afio {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Event Control Register (AFIO_EVCR)" ]
         pub evcr: Evcr,
@@ -19085,6 +19090,7 @@ pub const EXTI: Peripheral<Exti> = unsafe { Peripheral::new(1073808384) };
 pub mod exti {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Interrupt mask register (EXTI_IMR)" ]
         pub imr: Imr,
@@ -23928,6 +23934,7 @@ pub const DMA1: Peripheral<Dma1> = unsafe { Peripheral::new(1073872896) };
 pub mod dma1 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - DMA interrupt status register (DMA_ISR)" ]
         pub isr: Isr,
@@ -31331,6 +31338,7 @@ pub const RTC: Peripheral<Rtc> = unsafe { Peripheral::new(1073752064) };
 pub mod rtc {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - RTC Control Register High" ]
         pub crh: Crh,
@@ -32373,6 +32381,7 @@ pub const BKP: Peripheral<Bkp> = unsafe { Peripheral::new(1073769476) };
 pub mod bkp {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Backup data register (BKP_DR)" ]
         pub dr1: Dr1,
@@ -37454,6 +37463,7 @@ pub const IWDG: Peripheral<Iwdg> = unsafe { Peripheral::new(1073754112) };
 pub mod iwdg {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Key register (IWDG_KR)" ]
         pub kr: Kr,
@@ -37814,6 +37824,7 @@ pub const WWDG: Peripheral<Wwdg> = unsafe { Peripheral::new(1073753088) };
 pub mod wwdg {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Control register (WWDG_CR)" ]
         pub cr: Cr,
@@ -38277,6 +38288,7 @@ pub const TIM1: Peripheral<Tim1> = unsafe { Peripheral::new(1073818624) };
 pub mod tim1 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - control register 1" ]
         pub cr1: Cr1,
@@ -44755,6 +44767,7 @@ pub const TIM2: Peripheral<Tim2> = unsafe { Peripheral::new(1073741824) };
 pub mod tim2 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - control register 1" ]
         pub cr1: Cr1,
@@ -49951,6 +49964,7 @@ pub const TIM12: Peripheral<Tim12> = unsafe { Peripheral::new(1073747968) };
 pub mod tim12 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - control register 1" ]
         pub cr1: Cr1,
@@ -52791,6 +52805,7 @@ pub const TIM13: Peripheral<Tim13> = unsafe { Peripheral::new(1073748992) };
 pub mod tim13 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - control register 1" ]
         pub cr1: Cr1,
@@ -54545,6 +54560,7 @@ pub const TIM6: Peripheral<Tim6> = unsafe { Peripheral::new(1073745920) };
 pub mod tim6 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - control register 1" ]
         pub cr1: Cr1,
@@ -55590,6 +55606,7 @@ pub const I2C1: Peripheral<I2c1> = unsafe { Peripheral::new(1073763328) };
 pub mod i2c1 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Control register 1" ]
         pub cr1: Cr1,
@@ -58049,6 +58066,7 @@ pub const SPI1: Peripheral<Spi1> = unsafe { Peripheral::new(1073819648) };
 pub mod spi1 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - control register 1" ]
         pub cr1: Cr1,
@@ -59566,6 +59584,7 @@ pub const USART1: Peripheral<Usart1> = unsafe { Peripheral::new(1073821696) };
 pub mod usart1 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Status register" ]
         pub sr: Sr,
@@ -61960,6 +61979,7 @@ pub const ADC1: Peripheral<Adc1> = unsafe { Peripheral::new(1073816576) };
 pub mod adc1 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - status register" ]
         pub sr: Sr,
@@ -66325,6 +66345,7 @@ pub const DAC: Peripheral<Dac> = unsafe { Peripheral::new(1073771520) };
 pub mod dac {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Control register (DAC_CR)" ]
         pub cr: Cr,
@@ -68474,6 +68495,7 @@ pub const DBG: Peripheral<Dbg> = unsafe { Peripheral::new(3758366720) };
 pub mod dbg {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - DBGMCU_IDCODE" ]
         pub idcode: Idcode,
@@ -69530,6 +69552,7 @@ pub const UART4: Peripheral<Uart4> = unsafe { Peripheral::new(1073761280) };
 pub mod uart4 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Status register" ]
         pub sr: Sr,
@@ -71342,6 +71365,7 @@ pub const UART5: Peripheral<Uart5> = unsafe { Peripheral::new(1073762304) };
 pub mod uart5 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Status register" ]
         pub sr: Sr,
@@ -73113,6 +73137,7 @@ pub const CRC: Peripheral<Crc> = unsafe { Peripheral::new(1073885184) };
 pub mod crc {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Data register" ]
         pub dr: Dr,
@@ -73404,6 +73429,7 @@ pub const FLASH: Peripheral<Flash> = unsafe { Peripheral::new(1073881088) };
 pub mod flash {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - Flash access control register" ]
         pub acr: Acr,
@@ -74613,6 +74639,7 @@ pub const TIM15: Peripheral<Tim15> = unsafe { Peripheral::new(1073823744) };
 pub mod tim15 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - control register 1" ]
         pub cr1: Cr1,
@@ -78864,6 +78891,7 @@ pub const TIM16: Peripheral<Tim16> = unsafe { Peripheral::new(1073824768) };
 pub mod tim16 {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - control register 1" ]
         pub cr1: Cr1,
@@ -82156,6 +82184,7 @@ pub const CEC: Peripheral<Cec> = unsafe { Peripheral::new(1073772544) };
 pub mod cec {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         # [ doc = "0x00 - configuration register" ]
         pub cfgr: Cfgr,
@@ -83342,6 +83371,7 @@ pub const NVIC: Peripheral<Nvic> = unsafe { Peripheral::new(3758153728) };
 pub mod nvic {
     use vcell::VolatileCell;
     # [ doc = r" Register block" ]
+    # [ repr ( C ) ]
     pub struct RegisterBlock {
         _reserved0: [u8; 4usize],
         # [ doc = "0x04 - Interrupt Controller Type Register" ]
